@@ -25,14 +25,11 @@ var stylishHTML = function (conf) {
 
 $(function () {
     var conf = {};
-    var notfavs = new RegExp("^:[u|s] (.*)$");
-    var search = new RegExp("^:s (.*)$");
-    var site = new RegExp("^:u (.*)$");
     var input = $("#box").val();
 
     $.getJSON("web.json", function (object) {
         $.each(object.favourites, function (key, val,) {
-            $("#cheat ul").append("<li><a href='" + val.url + "' target='_blank'><span>" + val.key + "</span><span>" + val.title + "</span></a></li>");
+            $("#cheat ul").append("<li><a href='" + val.url + "' target='_blank'><span class='key'>" + val.key + "</span><span>" + val.title + "</span></a></li>");
             stylishHTML(object);
         });
 
@@ -62,7 +59,7 @@ $(function () {
     $("#box").keyup(function (event) {
         input = $(this).val();
 
-        if (input.length == 0 || notfavs.test(input)) {
+        if (input.length == 0) {
             $("#cheatp").slideUp();
         } else {
             $("#cheatp").slideDown();
@@ -80,20 +77,12 @@ $(function () {
         e.preventDefault();
         e.stopPropagation();
 
-        if (search.test(input)) {
-            link = conf.search_engine + encodeURIComponent(input.replace(/^:s /g, ""));
-        } else if (site.test(input)) {
-            link = input.replace(/^:u /g, "");
+        if (conf.favourites.find(f => f.key === input)) {
+            link = conf.favourites.find(f => f.key === input).url;
+        } else if (input.startsWith("http")) {
+            link = input;
         } else {
-            $.each(conf.favourites, function () {
-                if (this.key === input) {
-                    link = this.url;
-                }
-            });
-        }
-
-        if (!~link.indexOf("http")) {
-            link = "http://" + link;
+            link = conf.search_engine + encodeURIComponent(input);
         }
 
         window.open(link, "_blank");
