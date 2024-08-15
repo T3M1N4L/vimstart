@@ -1,40 +1,40 @@
 {
   "greeting_text": "おかえり！",
-  "background": "#171928",
-  "foreground": "#c7b7c7",
+  "background": "#000000",
+  "foreground": "#ffffff",
   "search_engine": "https://www.google.co.id/search?q=",
   "favourites": [
     {
-      "key": ":fb",
-      "url": "http://facebook.com"
+      "key": ":dc",
+      "url": "https://discord.com/channels/@me",
+      "color": "88, 101, 242",
+      "title": "discord"
     },
     {
-      "key": ":tt",
-      "url": "http://twitter.com"
-    },
-    {
-      "key": ":ig",
-      "url": "http://instagram.com"
+      "key": ":pm",
+      "url": "https://mail.proton.me/u/0/inbox",
+      "color": "109, 74, 255",
+      "title": "proton mail"
     },
     {
       "key": ":yt",
-      "url": "http://youtu.be"
+      "url": "http://youtu.be",
+      "color": "255, 0, 0",
+      "title": "youtube"
     },
+    {
+      "key": ":pp",
+      "url": "https://pass.proton.me/",
+      "color": "109, 74, 255",
+      "title": "proton pass"
+    },
+
+
     {
       "key": ":gh",
-      "url": "http://github.com"
-    },
-    {
-      "key": ":ks",
-      "url": "http://kaskus.co.id"
-    },
-    {
-      "key": ":tp",
-      "url": "http://tokopedia.com"
-    },
-    {
-      "key": ":em",
-      "url": "http://gmail.com"
+      "url": "http://github.com",
+      "color": "36, 41, 46",
+      "title": "github"
     }
   ]
 }

@@ -1,16 +1,26 @@
 var stylishHTML = function (conf) {
+
     $("*").css("background", conf.background);
     $("*").css("color", conf.foreground);
     $("#logo").html(conf.greeting_text);
-    $("#cheat li span:first-child").css("color", conf.background);
+
+    $("#cheat li span:first-child").css("color", conf.foreground);
 
     if (tinycolor(conf.foreground).isLight()) {
-        $("#cheat li span:first-child").css("background","rgba(200,200,200, 0.8)");
-        $("#cheat li span:last-child ").css("background","rgba(0,0,0, 0.4)");
+        $("#cheat li span:first-child").css("background", "rgba(200,200,200, 0.8)");
+        $("#cheat li span:last-child").css("background", "rgba(0,0,0, 0.4)");
     } else {
-        $("#cheat li span:first-child").css("background","rgba(0,0,0, 0.4)");
-        $("#cheat li span:last-child ").css("background","rgba(200,200,200, 0.8)");
+        $("#cheat li span:first-child").css("background", "rgba(0,0,0, 0.4)");
+        $("#cheat li span:last-child").css("background", "rgba(200,200,200, 0.8)");
     }
+
+    $("#cheat li a").each(function() {
+        var key = $(this).find("span:first-child").text();
+        var fav = conf.favourites.find(f => f.key === key);
+        if (fav) {
+            $(this).find("span:first-child").css("background-color", `rgb(${fav.color})`);
+        }
+    });
 };
 
 $(function () {
@@ -21,8 +31,8 @@ $(function () {
     var input = $("#box").val();
 
     $.getJSON("web.json", function (object) {
-        $.each(object.favourites, function (key, val) {
-            $("#cheat ul").append("<li><a href='" + val.url + "' target='_blank'><span>" + val.key + "</span><span>" + val.url + "</span></a></li>");
+        $.each(object.favourites, function (key, val,) {
+            $("#cheat ul").append("<li><a href='" + val.url + "' target='_blank'><span>" + val.key + "</span><span>" + val.title + "</span></a></li>");
             stylishHTML(object);
         });
 
