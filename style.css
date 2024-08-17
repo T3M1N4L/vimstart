@@ -19,9 +19,13 @@
 html, input {
   background-color: black;
   color: white;
+  caret-shape: block !important;
 }
 .terminal {
   font-family: "JetBrains Mono";
+  margin-right: 0.5em;
+  flex-shrink: 0;
+  font-size: 1rem;
 }
 
 .key {
@@ -49,7 +53,23 @@ li a span {
 
 li a:hover span:last-child,
 li a:focus span:last-child {
-  background-color: #000000 !important;
+  background-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+.text-green {
+  color:rgb(43, 255, 107) !important;
+}
+
+.text-gray {
+  color:rgb(68, 68, 68) !important;
+}
+
+.text-magenta {
+  color:rgb(255, 121, 121) !important;
+}
+
+.text-purple {
+  color:rgb(193, 58, 255) !important;
 }
 
 #container {
@@ -80,6 +100,11 @@ li a:focus span:last-child {
 
 #search {
   padding: 50px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #box {
@@ -87,15 +112,22 @@ li a:focus span:last-child {
   box-sizing: border-box;
   cursor: text;
   font-family: "JetBrains Mono";
-  font-size: 16px;
   margin: 0;
-  padding: 10px 15px;
   transition: all .2s ease-in-out;
-  width: 100%;
+  flex-grow: 1;
+  width: 55vw;
+  max-width: calc(100% - 2rem);
+  min-width: 200px;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  font-size: 1rem;
+  outline: none;
 }
 
 #cheatp {
   display: none;
+  width: 100%;
+  margin-top: 15px;
 }
 
 #cheat ul {
@@ -133,3 +165,65 @@ li a:focus span:last-child {
   border-radius: 0 5px 5px 0;
 }
 
+
+#search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  #box {
+    width: 100%;
+    padding: 8px 12px;
+  }
+
+  .terminal {
+    margin-right: 5px;
+    padding-bottom: 10px;
+  }
+
+  #search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #cheatp {
+    margin-top: 5px;
+  }
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#clock {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  font-family: "JetBrains Mono";
+  z-index: 1000;
+}
+
+
+.time {
+  color: rgb(43, 255, 107) !important;
+}
+.day {
+  color: rgb(255, 121, 121) !important;
+}
+.month {
+  color: rgb(193, 58, 255) !important;
+}
+.date {
+  color: rgb(193, 58, 255) !important;
+}

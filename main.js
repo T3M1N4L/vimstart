@@ -1,3 +1,43 @@
+//clock
+function getOrdinalSuffix(day) {
+    if (day >= 11 && day <= 13) return day + 'th';
+    switch (day % 10) {
+        case 1: return day + 'st';
+        case 2: return day + 'nd';
+        case 3: return day + 'rd';
+        default: return day + 'th';
+    }
+}
+
+function updateDateTime() {
+    const now = new Date();
+
+    const optionsTime = {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    };
+    const optionsDay = { weekday: "long" };
+    const optionsMonth = { month: "short" };
+    const optionsDate = { day: "numeric" };
+
+    const time = now.toLocaleTimeString("en-US", optionsTime);
+    const day = now.toLocaleDateString("en-US", optionsDay);
+    const month = now.toLocaleDateString("en-US", optionsMonth);
+    const date = getOrdinalSuffix(now.getDate());
+
+    document.getElementById("clock").innerHTML = `
+            <span class="time">${time}</span> / 
+            <span class="day">${day}</span> / 
+            <span class="month">${month}</span> / 
+            <span class="date">${date}</span>
+        `;
+  }
+
+  updateDateTime();
+  setInterval(updateDateTime, 60000); // Update every minute
+  
+// clock end
 var stylishHTML = function (conf) {
 
     $("*").css("background", conf.background);
@@ -49,7 +89,7 @@ $(function () {
             $("#box").blur();
             $("#box").val("");
             $("#cheatp").slideUp();
-            $("#holder").html("type  :&lt;key&gt;  and  hit enter");
+            $("#holder").html(":&lt;key&gt; , s-query, or url");
             $("#cheat ul li").each(function () {
                 $(this).removeClass("dis");
             });

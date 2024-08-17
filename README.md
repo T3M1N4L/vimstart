@@ -16,19 +16,12 @@ And set the index.html as homepages or new tabs in your browser.
 
 There is a few command that can be used :
 
-###### Open favourites website listed in web.json, example (open gmail):
+###### Open favourites website listed in web.json, example (open discord):
 
-     :em
+     :dc
 
-###### Go to url, example :
-
-     :u http://lovepancakes.blog
-
-###### Search, example :
-
-     :s How to make a delicious pancakes at home
-
-
+######
+You can search and go to url's automatically unlike the original
 ## Editing
 
 SEE [`web.json`](web.json).

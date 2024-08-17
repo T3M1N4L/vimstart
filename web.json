@@ -1,5 +1,5 @@
 {
-  "greeting_text": "おかえり！",
+  "greeting_text": "^﹏^ おかえり！",
   "background": "#000000",
   "foreground": "#c7b7c7",
   "search_engine": "https://www.google.co.id/search?q=",
@@ -11,16 +11,16 @@
       "title": "discord"
     },
     {
-      "key": ":pm",
-      "url": "https://mail.proton.me/u/0/inbox",
-      "color": "109, 74, 255",
-      "title": "proton mail"
-    },
-    {
       "key": ":yt",
       "url": "http://youtu.be",
       "color": "255, 0, 0",
       "title": "youtube"
+    },
+    {
+      "key": ":pm",
+      "url": "https://mail.proton.me/u/0/inbox",
+      "color": "109, 74, 255",
+      "title": "proton mail"
     },
     {
       "key": ":pp",
@@ -28,13 +28,17 @@
       "color": "109, 74, 255",
       "title": "proton pass"
     },
-
-
     {
       "key": ":gh",
       "url": "http://github.com",
       "color": "36, 41, 46",
       "title": "github"
+    },
+    {
+      "key": ":vc",
+      "url": "https://vscode.dev/",
+      "color": "41, 160, 242",
+      "title": "vscode"
     }
   ]
 }
