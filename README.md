@@ -7,7 +7,7 @@
 
 Clone this repo
 
-    git clone https://github.com/yuune/yuune-vim-startpage.git
+    git clone https://github.com/T3M1N4L/vimstart.git
     
 And set the index.html as homepages or new tabs in your browser.
 
