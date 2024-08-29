@@ -2,7 +2,7 @@
   "greeting_text": "^﹏^ おかえり！",
   "background": "#000000",
   "foreground": "#c7b7c7",
-  "search_engine": "https://www.google.co.id/search?q=",
+  "search_engine": "https://www.google.com/search?q=",
   "favourites": [
     {
       "key": ":dc",
