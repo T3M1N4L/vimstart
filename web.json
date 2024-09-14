@@ -1,8 +1,16 @@
 {
   "greeting_text": "^﹏^ おかえり！",
   "background": "#000000",
-  "foreground": "#c7b7c7",
+  "foreground": "#C3B7D1",
   "search_engine": "https://www.google.com/search?q=",
+  "search_engines": [
+    { "name": "Google", "url": "https://www.google.com/search?q=", "color": "#F5FF6D" },
+    { "name": "Bing", "url": "https://www.bing.com/search?q=", "color": "#4080FF" },
+    { "name": "DuckDuckGo", "url": "https://duckduckgo.com/?q=", "color": "#FF864A" },
+    { "name": "Baidu", "url": "https://www.baidu.com/s?wd=", "color": "#334BFF" },
+    { "name": "Dogpile", "url": "https://www.dogpile.com/serp?q=", "color": "#79FF5B" },
+    { "name": "Yahoo", "url": "https://search.yahoo.com/search?p=", "color": "#8725FF" }
+  ],
   "favourites": [
     {
       "key": ":dc",
@@ -12,7 +20,7 @@
     },
     {
       "key": ":yt",
-      "url": "http://youtu.be",
+      "url": "http://youtube.com",
       "color": "255, 0, 0",
       "title": "youtube"
     },
