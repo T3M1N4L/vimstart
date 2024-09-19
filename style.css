@@ -261,6 +261,15 @@ li a:focus span:last-child {
   font-family: "JetBrains Mono";
   z-index: 1000;
 }
+.battery {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  font-family: "JetBrains Mono";
+  z-index: 1000;
+  color:#1c1c1c !important;
+}
 
 .time {
   color: rgb(43, 255, 107) !important;
